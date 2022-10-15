@@ -6,8 +6,8 @@ export class DbzService {
   constructor() {
     console.log('Servicio Inicializado');
   }
-
-  personajes: Personaje[] = [
+  
+  private _personajes: Personaje[] = [
     {
       nombre: 'Goku',
       poder: 5000,
@@ -17,4 +17,12 @@ export class DbzService {
       poder: 4000,
     },
   ];
+
+  get personajes(): Personaje[]{
+    return [...this._personajes];
+  }
+
+  agregarPersonaje(personaje: Personaje){
+    this._personajes.push(personaje);
+  }
 }

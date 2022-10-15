@@ -8,21 +8,9 @@ import { DbzService } from '../services/dbz.service';
 })
 export class MainPageComponent {
 
-  constructor(private dbzService: DbzService) {}
-  
-  get personajes(): Personaje[] {
-    return this.dbzService.personajes;
-  }
-  
   defaultPersonaje: Personaje = {
-    nombre: '',
-    poder: 0
+    nombre: 'Trunks',
+    poder: 1000
   }
-
-  agregarNuevoPersonaje(personaje: Personaje){
-    this.personajes.push(personaje);
-    console.log("asdasd");
-  }
-
 
 }
